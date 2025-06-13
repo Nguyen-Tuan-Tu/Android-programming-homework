@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#E8E8E8"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:gravity="center_vertical"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/xoi"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:id="@+id/food_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên món: Xôi\nGiá tiền: 15000đ"
+        android:textSize="16sp"
+        android:textColor="#000000" />
+
+</LinearLayout>

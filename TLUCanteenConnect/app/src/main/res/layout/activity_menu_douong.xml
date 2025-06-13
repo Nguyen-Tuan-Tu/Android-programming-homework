@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AAB3F7"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THỰC ĐƠN"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHÀO NGÀY MỚI"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txt_recomment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đề xuất"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:drawableBottom="@drawable/underline" />
+
+        <TextView
+            android:id="@+id/txt_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Bữa sáng  "
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txt_drink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Đồ uống  "
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- Danh sách món ăn -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:spacing="8dp">
+
+            <!-- Mỗi món ăn -->
+            <include layout="@layout/image_trachanh"
+                android:layout_marginBottom="12dp"
+                android:tag="bun_dau"
+                android:contentDescription="Bún đậu - 30.000vnd" />
+
+            <include layout="@layout/image_tradao"
+                android:layout_marginBottom="12dp"
+                android:tag="mi_tom"
+                android:contentDescription="Mì tôm - 20.000vnd" />
+
+            <include layout="@layout/image_traoi"
+                android:layout_marginBottom="12dp"
+                android:tag="sup_rau"
+                android:contentDescription="Súp rau quả - 40.000vnd" />
+
+            <include layout="@layout/image_traxoai"
+                android:layout_marginBottom="12dp"
+                android:tag="hu_tieu"
+                android:contentDescription="Hủ tiếu trộn - 35.000vnd" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
