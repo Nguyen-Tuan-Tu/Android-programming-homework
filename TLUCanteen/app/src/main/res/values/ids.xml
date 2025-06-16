@@ -10,4 +10,11 @@
     <item name="username" type="id">username</item>
     <item name="phone" type="id">phone</item>
     <item name="register_button" type="id">register_button</item>
+    <item name="forgot_root" type="id">forgot_root</item>
+    <item name="btn_back" type="id">btn_back</item>
+    <item name="tv_title" type="id">tv_title</item>
+    <item name="tv_subtitle" type="id">tv_subtitle</item>
+    <item name="tv_label_email" type="id">tv_label_email</item>
+    <item name="et_email" type="id">et_email</item>
+    <item name="btn_confirm" type="id">btn_ocnfirm</item>
 </resources>
