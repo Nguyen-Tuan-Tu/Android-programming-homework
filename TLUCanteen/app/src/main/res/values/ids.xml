@@ -17,4 +17,12 @@
     <item name="tv_label_email" type="id">tv_label_email</item>
     <item name="et_email" type="id">et_email</item>
     <item name="btn_confirm" type="id">btn_ocnfirm</item>
+    <item name="search_view" type="id">search_view</item>
+    <item name="tv_more" type="id">tv_more</item>
+    <item name="account_button" type="id">account_button</item>
+    <item name="notification_switch" type="id">notification_switch</item>
+    <item name="manage_food_button" type="id">manage_food_button</item>
+    <item name="manage_orders_button" type="id">manage_orders_button</item>
+    <item name="logout_button" type="id">logout_button</item>
+    <item name="bottom_navigation" type="id">bottom_navigation</item>
 </resources>
