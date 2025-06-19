@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#AAB3F7"
+    android:gravity="center">
+
+    <!-- Back Button -->
+
+    <!-- Logo -->
+    <!-- Nút back nằm góc trái -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start">
+
+        <ImageButton
+            android:id="@+id/btn_Back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back" />
+    </LinearLayout>
+
+    <!-- Title -->
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="THUY LOI CANTEEN CONNECT"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_gravity="center" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thông tin món"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center" />
+
+    <!-- Menu Information -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#fdf1da"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tên món -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên Món: Bánh mì"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <!-- Giá tiền -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giá tiền: 15.000vnđ"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <!-- Mô tả -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mô tả: Ngon"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <!-- Nguyên liệu -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyên liệu: Vỏ bánh mì, trứng pate, dưa leo"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <!-- Image -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_banhmi" />
+
+        <!-- Thời gian đặt -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời gian đặt: 7:00 AM - 19/05/2025"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <!-- Xác nhận button -->
+        <Button
+            android:id="@+id/btn_CFfoodBM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="#FFEB3B"
+            android:text="Xác nhận"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
