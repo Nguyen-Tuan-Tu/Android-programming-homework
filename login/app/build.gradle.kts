@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tlucanteen"
+    namespace = "com.example.login"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.tlucanteen"
+        applicationId = "com.example.login"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -36,6 +36,7 @@ android {
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
     implementation("com.google.firebase:firebase-analytics")
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
