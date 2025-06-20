@@ -1,0 +1,25 @@
+{
+  "users": {
+    "user1": {
+      "email": "user1@example.com",
+      "password": "password123",
+      "firstName": "Phong",
+      "lastName": "Nguyen",
+      "birthYear": 1999
+    },
+    "user2": {
+      "email": "user2@example.com",
+      "password": "password456",
+      "firstName": "Trang",
+      "lastName": "Le",
+      "birthYear": 1995
+    },
+    "user3": {
+      "email": "user3@example.com",
+      "password": "password789",
+      "firstName": "Tuan",
+      "lastName": "Pham",
+      "birthYear": 1998
+    }
+  }
+}
