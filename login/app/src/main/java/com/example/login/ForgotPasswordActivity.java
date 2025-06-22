@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     private EditText emailEditText;
     private Button confirmButton;
+    private ImageButton backButton;
 
     private FirebaseDatabase database;
     private DatabaseReference usersRef;
@@ -30,10 +32,14 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         emailEditText = findViewById(R.id.et_email);
         confirmButton = findViewById(R.id.btn_confirm);
+        backButton = findViewById(R.id.btn_back);
 
         // Khởi tạo Firebase Realtime Database
         database = FirebaseDatabase.getInstance();
         usersRef = database.getReference("users");
+
+        // Sự kiện nhấn nút Back
+        backButton.setOnClickListener(v -> onBackPressed());
 
         confirmButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
