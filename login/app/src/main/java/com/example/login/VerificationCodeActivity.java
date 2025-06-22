@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,15 +18,19 @@ public class VerificationCodeActivity extends AppCompatActivity {
     private Button confirmButton;
     private TextView otpTextView;
     private String generatedOtp;  // Biến lưu mã OTP
+    private String email;  // Email được truyền qua Intent từ ForgotPasswordActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verification_code);  // Đảm bảo bạn sử dụng layout của bạn
+        setContentView(R.layout.activity_verification_code);
 
         verificationCodeEditText = findViewById(R.id.et_verification_code);
         confirmButton = findViewById(R.id.btn_confirm);
         otpTextView = findViewById(R.id.tv_generated_otp);
+
+        // Lấy email từ Intent
+        email = getIntent().getStringExtra("email");
 
         // Sinh mã OTP ngẫu nhiên
         generatedOtp = generateOtp();
@@ -36,7 +41,10 @@ public class VerificationCodeActivity extends AppCompatActivity {
             if (enteredOtp.equals(generatedOtp)) {
                 // Nếu mã OTP đúng
                 Toast.makeText(VerificationCodeActivity.this, "Mã OTP đúng! Thực hiện thao tác tiếp theo.", Toast.LENGTH_SHORT).show();
-                // Bạn có thể thực hiện tiếp các hành động như chuyển màn hình hoặc cập nhật thông tin
+                // Chuyển sang màn hình thay đổi mật khẩu
+                Intent intent = new Intent(VerificationCodeActivity.this, ChangePasswordActivity.class);
+                intent.putExtra("email", email);  // Truyền email qua màn hình thay đổi mật khẩu
+                startActivity(intent);
             } else {
                 // Nếu mã OTP sai
                 Toast.makeText(VerificationCodeActivity.this, "Mã OTP sai, vui lòng nhập lại.", Toast.LENGTH_SHORT).show();
