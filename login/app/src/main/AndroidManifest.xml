@@ -34,6 +34,23 @@
             <!-- Các thiết lập khác nếu cần -->
         </activity>
 
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".VerificationCodeActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:exported="true"/>
+
+        <activity
+            android:name=".PasswordChangedSuccessActivity"
+            android:exported="true"/>
+
+
     </application>
 
 </manifest>

@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
-    private Button loginButton;
+    private Button loginButton, forgotPasswordButton;
 
     private FirebaseDatabase database;
     private DatabaseReference usersRef;
@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.login_button);
+        forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
+
 
         // Sự kiện khi nhấn nút Đăng nhập
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     checkLogin(email, password);
                 }
             }
+        });
+        forgotPasswordButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ForgotPasswordActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -84,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Email hoặc mật khẩu không đúng.", Toast.LENGTH_SHORT).show();
                 }
             }
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
