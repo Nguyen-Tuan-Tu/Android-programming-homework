@@ -25,4 +25,5 @@
     <item name="manage_orders_button" type="id">manage_orders_button</item>
     <item name="logout_button" type="id">logout_button</item>
     <item name="bottom_navigation" type="id">bottom_navigation</item>
+    <item name="tv_label_update_food" type="id">tv_label_update_food</item>
 </resources>
