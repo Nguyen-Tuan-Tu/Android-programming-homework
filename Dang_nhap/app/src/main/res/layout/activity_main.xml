@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    android:background="#DBE8F8"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/tcc_logo" android:contentDescription="TCC Logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thuy Loi"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canteen Connect"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng Nhập"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edittext" android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật khẩu:"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tv_error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên tài khoản hoặc mật khẩu không đúng"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="14sp"
+        android:visibility="gone" android:gravity="center_horizontal"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btn_dang_nhap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng Nhập"
+        android:background="@drawable/rounded_button" android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_quen_mat_khau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu?"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</LinearLayout>
