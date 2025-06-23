@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9eaeee">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <!-- Dòng chữ chào mừng -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHÀO MỪNG ĐẾN VỚI ỨNG DỤNG\n         TLU CANTEEN CONNECT"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:padding="10dp"
+             />
+
+        <!-- Hình ảnh -->
+        <ImageView
+            android:layout_width="339dp"
+            android:layout_height="339dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="30dp" />
+
+        <!-- Box nền kem bo góc -->
+
+        <!-- Khoảng trống -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_box"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/rounded_box"
+                android:backgroundTint="@color/black"
+                android:text="BẮT ĐẦU"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+
+        <!-- Nút hoặc chữ "BẮT ĐẦU" -->
+    </LinearLayout>
+</ScrollView>
