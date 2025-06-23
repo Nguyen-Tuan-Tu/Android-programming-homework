@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Day of the week -->
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thứ 2"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Dish 1 -->
+    <TextView
+        android:id="@+id/tv_dish1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cơm gà"
+        android:textSize="14sp" />
+
+    <!-- Dish 2 -->
+    <TextView
+        android:id="@+id/tv_dish2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bún bò"
+        android:textSize="14sp" />
+
+    <!-- Dish 3 -->
+    <TextView
+        android:id="@+id/tv_dish3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canh chua cá"
+        android:textSize="14sp" />
+
+    <!-- Button for details -->
+    <Button
+        android:id="@+id/btn_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chi tiết" />
+</LinearLayout>

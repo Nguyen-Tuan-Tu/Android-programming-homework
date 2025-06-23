@@ -26,4 +26,9 @@
     <item name="logout_button" type="id">logout_button</item>
     <item name="bottom_navigation" type="id">bottom_navigation</item>
     <item name="tv_label_update_food" type="id">tv_label_update_food</item>
+    <item name="notification_title" type="id">notification_title</item>
+    <item name="notification_2" type="id">notification_2</item>
+    <item name="notification_1" type="id">notification_1</item>
+    <item name="notification_3" type="id">notification_3</item>
+    <item name="btn_notif" type="id">btn_notif</item>
 </resources>
