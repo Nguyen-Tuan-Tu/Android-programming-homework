@@ -2,6 +2,7 @@ package com.example.tlucanteenconnect;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,21 @@ public class FoodFragment extends Fragment {
                 }
             });
         }
+
+        ImageView Mitom = view.findViewById(R.id.img_mi_tom); // Sửa lại để dùng view.findViewById()
+        if (Mitom != null) {
+            Mitom.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Chuyển sang Activity Chi Tiết Món Ăn
+                    Intent intent = new Intent(getActivity(), ChiTietMonAnActivity.class); // Sử dụng getActivity() thay vì FoodFragment.this
+                    startActivity(intent);
+                    // Nếu bạn muốn kết thúc Activity hiện tại (nếu FoodFragment đang hoạt động trong một Activity)
+                    getActivity().finish(); // Kết thúc Activity nếu cần thiết
+                }
+            });
+        }
+
         return view;
     }
 }

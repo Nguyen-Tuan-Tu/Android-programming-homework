@@ -83,10 +83,11 @@
             android:gravity="center_vertical">
 
             <ImageView
+                android:id="@+id/img_mi_tom"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img_mitom"/>
+                android:src="@drawable/img_mitom" />
 
             <LinearLayout
                 android:orientation="vertical"

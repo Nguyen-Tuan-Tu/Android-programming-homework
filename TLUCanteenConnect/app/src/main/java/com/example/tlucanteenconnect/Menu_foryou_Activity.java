@@ -47,5 +47,15 @@ public class Menu_foryou_Activity extends AppCompatActivity {
                 startActivity(intent);  // Chạy Activity mới
             }
         });
+        Button Signup = findViewById(R.id.btn_Signup);
+        Signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển sang Activity Menu Đồ uống
+                Intent intent = new Intent(Menu_foryou_Activity.this, DangKiActivity.class);
+                startActivity(intent);  // Chạy Activity mới
+            }
+        });
+
     }
 }

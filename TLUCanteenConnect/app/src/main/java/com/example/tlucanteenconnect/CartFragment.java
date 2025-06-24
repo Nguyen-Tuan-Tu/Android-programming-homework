@@ -2,11 +2,14 @@ package com.example.tlucanteenconnect;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -35,7 +38,25 @@ public class CartFragment extends Fragment {
                     }
                 }
             });
+            ImageView Burger = view.findViewById(R.id.img_burger_bo); // Sửa lại để dùng view.findViewById()
+            if (Burger != null) {
+                Burger.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // Chuyển sang Activity Menu Đồ uống khi nhấn nút
+                        Intent intent = new Intent(getActivity(), OrderActivity.class); // Sử dụng getActivity() thay vì CartFragment.this
+                        startActivity(intent);
+                        // Nếu bạn muốn kết thúc Activity hiện tại (nếu CartFragment đang hoạt động trong một Activity)
+                        getActivity().finish(); // Kết thúc Activity nếu cần thiết
+                    }
+                });
+            }
+
         }
+
+
         return view;
+
     }
+
 }

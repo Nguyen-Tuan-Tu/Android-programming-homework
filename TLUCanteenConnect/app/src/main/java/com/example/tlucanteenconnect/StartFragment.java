@@ -1,5 +1,6 @@
 package com.example.tlucanteenconnect;
 
+import android.content.ClipData;
 import android.os.Bundle;
 import android.util.Log; // Quan trọng: Đảm bảo đã import Log
 import android.view.LayoutInflater;
@@ -54,7 +55,6 @@ public class StartFragment extends Fragment {
             Log.e("StartFragment", "Error: ImageView with ID R.id.profile_icon not found in fragment_start_layout.xml!");
             // Log.e("StartFragment", "Check your fragment_start_layout.xml to ensure the ImageView has id=@+id/profile_icon and is correctly placed.");
         }
-
         return view;
     }
 }
