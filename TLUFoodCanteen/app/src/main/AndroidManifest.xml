@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.login">
+
+    <!-- Cung cấp quyền truy cập vào Internet nếu sử dụng Firebase -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Login"
+        tools:targetApi="31">
+
+        <!-- MainActivity: Màn hình đăng nhập -->
+        <activity
+            android:name=".Begin_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainScreenActivity: Màn hình chính sau khi đăng nhập -->
+        <activity
+            android:name=".MainScreenActivityAdmin"
+            android:exported="true">
+            <!-- Các thiết lập khác nếu cần -->
+        </activity>
+
+        <activity
+            android:name=".ForgotPasswordActivityAdmin"
+            android:exported="true"/>
+
+        <activity
+            android:name=".VerificationCodeActivityAdmin"
+            android:exported="true"/>
+
+        <activity
+            android:name=".ChangePasswordActivityAdmin"
+            android:exported="true"/>
+`       <activity android:name=".AdminLoginActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".PasswordChangedSuccessActivityAdmin"
+            android:exported="true"/>
+        <activity android:name=".MenuActivityAdmin"
+            android:exported="true"/>
+        <activity android:name=".AddMenuActivityAdmin"
+            android:exported="true"/>
+        <activity android:name=".MenuDetailActivityAdmin"
+            android:exported="true"/>
+        <activity android:name=".UpdateMenuActivityAdmin"
+            android:exported="true"/>
+        <activity android:name=".Menu_foryou_Activity" android:exported="true"/>
+        <activity android:name=".Menu_breakfast_Activity" android:exported="true"/>
+        <activity android:name=".Menu_drink_Activity" android:exported="true"/>
+        <activity android:name=".ManageFood_Activity" android:exported="true"/>
+        <activity android:name=".EditFood_Activity" android:exported="true"/>
+        <activity android:name=".AddFood_Activity" android:exported="true"/>
+        <activity android:name=".AdminMore_Activity" android:exported="true"/>
+        <activity android:name=".ManageOder_Activity" android:exported="true"/>
+        <activity android:name=".ManageFood_Activity" android:exported="true" tools:ignore="DuplicateActivity"/>
+        <activity android:name=".ViewListOder_Activity" android:exported="true"/>
+        <activity android:name=".InforFood_Activity" android:exported="true"/>
+        <activity android:name=".StatisticalOder_Activity" android:exported="true"/>
+        <activity android:name=".HomePage_Activity" android:exported="true"/>
+        <activity android:name=".DangKiActivity" android:exported="true"/>
+        <activity android:name=".ConfirmEmailDkiActivity" android:exported="true"/>
+        <activity android:name=".RegistrationSuccessActivity" android:exported="true"/>
+        <activity android:name=".ChiTietMonAnActivity" android:exported="true"/>
+        <activity android:name=".PaymentActivity" android:exported="true"/>
+        <activity android:name=".OrderActivity" android:exported="true"/>
+        <activity android:name=".AccountInfoActivity"
+            android:exported="true"/>
+    </application>
+
+</manifest>
