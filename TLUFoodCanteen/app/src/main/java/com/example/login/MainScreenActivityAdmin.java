@@ -77,6 +77,8 @@ public class MainScreenActivityAdmin extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home) {
                 // Mở màn hình Home nếu cần
+                Intent intent = new Intent(MainScreenActivityAdmin.this, AccountInfoActivity.class);
+                startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.menu) {
                 // Chuyển đến màn hình Menu
@@ -85,9 +87,13 @@ public class MainScreenActivityAdmin extends AppCompatActivity {
                 return true;
             } else if (item.getItemId() == R.id.notification) {
                 // Mở màn hình Notification nếu cần
+                Intent intent = new Intent(MainScreenActivityAdmin.this, NotificationActivity.class);
+                startActivity(intent);
                 return true;
             } else if (item.getItemId() == R.id.more) {
                 // Mở màn hình More nếu cần
+                Intent intent = new Intent(MainScreenActivityAdmin.this, AdminMore_Activity.class);
+                startActivity(intent);
                 return true;
             }
             return false;
