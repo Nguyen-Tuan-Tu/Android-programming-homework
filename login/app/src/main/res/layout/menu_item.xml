@@ -1,48 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="?android:attr/selectableItemBackground">
+    android:padding="16dp">
 
-    <!-- Day of the week -->
     <TextView
         android:id="@+id/tv_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thứ 2"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="Ngày" />
 
-    <!-- Dish 1 -->
     <TextView
-        android:id="@+id/tv_dish1"
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cơm gà"
-        android:textSize="14sp" />
+        android:text="Tên thực đơn" />
 
-    <!-- Dish 2 -->
     <TextView
-        android:id="@+id/tv_dish2"
+        android:id="@+id/tv_food"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bún bò"
-        android:textSize="14sp" />
+        android:text="Món ăn" />
 
-    <!-- Dish 3 -->
     <TextView
-        android:id="@+id/tv_dish3"
+        android:id="@+id/tv_notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Canh chua cá"
-        android:textSize="14sp" />
-
-    <!-- Button for details -->
-    <Button
-        android:id="@+id/btn_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chi tiết" />
+        android:text="Ghi chú" />
 </LinearLayout>

@@ -1,23 +1,29 @@
 package com.example.login;
 
+import java.util.List;
+
 public class Menu {
 
     private String day;
-    private String dish1;
-    private String dish2;
-    private String dish3;
+    private String name;
+    private List<String> food;
+    private List<String> notes;
 
-    // Default constructor for Firebase
-    public Menu() {}
+    // --- THÊM VÀO ---
+    // Constructor rỗng bắt buộc cho Firebase
+    public Menu() {
+    }
+    // --- KẾT THÚC THÊM VÀO ---
 
-    // Constructor with parameters
-    public Menu(String dish1, String dish2, String dish3) {
-        this.dish1 = dish1;
-        this.dish2 = dish2;
-        this.dish3 = dish3;
+    // Constructor để tạo đối tượng từ code
+    public Menu(String day, String name, List<String> food, List<String> notes) {
+        this.day = day;
+        this.name = name;
+        this.food = food;
+        this.notes = notes;
     }
 
-    // Getter and Setter for 'day'
+    // Getter và Setter (Giữ nguyên như của bạn)
     public String getDay() {
         return day;
     }
@@ -26,30 +32,27 @@ public class Menu {
         this.day = day;
     }
 
-    // Getter and Setter for 'dish1'
-    public String getDish1() {
-        return dish1;
+    public String getName() {
+        return name;
     }
 
-    public void setDish1(String dish1) {
-        this.dish1 = dish1;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    // Getter and Setter for 'dish2'
-    public String getDish2() {
-        return dish2;
+    public List<String> getFood() {
+        return food;
     }
 
-    public void setDish2(String dish2) {
-        this.dish2 = dish2;
+    public void setFood(List<String> food) {
+        this.food = food;
     }
 
-    // Getter and Setter for 'dish3'
-    public String getDish3() {
-        return dish3;
+    public List<String> getNotes() {
+        return notes;
     }
 
-    public void setDish3(String dish3) {
-        this.dish3 = dish3;
+    public void setNotes(List<String> notes) {
+        this.notes = notes;
     }
 }

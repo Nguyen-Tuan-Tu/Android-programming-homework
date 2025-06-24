@@ -1,62 +1,60 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuViewHolder> {
+    private List<Menu> menuList;
 
-    private ArrayList<Menu> menuList;
-
-    public static class MenuViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvDay, tvDish1, tvDish2, tvDish3;
-        public Button btnDetail;
-
-        public MenuViewHolder(View itemView) {
-            super(itemView);
-            tvDay = itemView.findViewById(R.id.tv_day);
-            tvDish1 = itemView.findViewById(R.id.tv_dish1);
-            tvDish2 = itemView.findViewById(R.id.tv_dish2);
-            tvDish3 = itemView.findViewById(R.id.tv_dish3);
-            btnDetail = itemView.findViewById(R.id.btn_detail);
-        }
-    }
-
-    public MenuAdapter(ArrayList<Menu> menuList) {
+    public MenuAdapter(List<Menu> menuList) {
         this.menuList = menuList;
     }
 
     @Override
     public MenuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item, parent, false);
-        return new MenuViewHolder(view);
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.menu_item, parent, false);
+        return new MenuViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MenuViewHolder holder, int position) {
         Menu menu = menuList.get(position);
+        holder.dayTextView.setText(menu.getDay());
+        holder.nameTextView.setText(menu.getName());
+        holder.foodTextView.setText(String.join(", ", menu.getFood()));
+        holder.notesTextView.setText(String.join(", ", menu.getNotes()));
 
-        // Use getters to access menu data
-        holder.tvDay.setText(menu.getDay());
-        holder.tvDish1.setText(menu.getDish1());
-        holder.tvDish2.setText(menu.getDish2());
-        holder.tvDish3.setText(menu.getDish3());
-
-        // Handle button click
-        holder.btnDetail.setOnClickListener(v -> {
-            // Navigate to the details page
-            // You can add logic to navigate to a new Activity or Fragment here
+        // Bắt sự kiện khi click vào item
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), MenuDetailActivity.class);
+            // truyền key `day` để truy vấn chi tiết
+            intent.putExtra("menu_day", menu.getDay());
+            v.getContext().startActivity(intent);
         });
     }
 
     @Override
     public int getItemCount() {
         return menuList.size();
+    }
+
+    public static class MenuViewHolder extends RecyclerView.ViewHolder {
+        TextView dayTextView, nameTextView, foodTextView, notesTextView;
+
+        public MenuViewHolder(View itemView) {
+            super(itemView);
+            dayTextView  = itemView.findViewById(R.id.tv_day);
+            nameTextView = itemView.findViewById(R.id.tv_name);
+            foodTextView = itemView.findViewById(R.id.tv_food);
+            notesTextView= itemView.findViewById(R.id.tv_notes);
+        }
     }
 }

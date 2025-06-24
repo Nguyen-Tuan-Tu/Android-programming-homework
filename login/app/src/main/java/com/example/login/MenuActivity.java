@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -14,59 +15,81 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private MenuAdapter menuAdapter;
-    private ArrayList<Menu> menuList;
+    private List<Menu> menuList;
+    private DatabaseReference menuRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu); // Thay thế bằng layout của bạn
+        setContentView(R.layout.activity_menu);
 
-        // Ánh xạ RecyclerView
+        // Khởi tạo RecyclerView và adapter
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Khởi tạo danh sách menu
         menuList = new ArrayList<>();
-
-        // Khởi tạo Adapter
         menuAdapter = new MenuAdapter(menuList);
         recyclerView.setAdapter(menuAdapter);
 
-        // Lấy dữ liệu từ Firebase
-        getMenuData();
+        // Khởi tạo Firebase Database reference
+        menuRef = FirebaseDatabase.getInstance().getReference("menu");
+
+        // Lấy dữ liệu từ Firebase lần đầu tiên khi Activity được tạo
+        loadMenuData();
+
+        // Xử lý sự kiện khi nhấn nút "Thêm thực đơn"
+        findViewById(R.id.btn_add_menu).setOnClickListener(v -> {
+            // Chuyển đến Activity thêm thực đơn
+            Intent intent = new Intent(MenuActivity.this, AddMenuActivity.class);
+            startActivity(intent);
+        });
     }
 
-    private void getMenuData() {
-        // Kết nối đến Firebase Realtime Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference menuRef = database.getReference("menu");
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Lấy lại dữ liệu khi Activity quay lại từ AddMenuActivity
+        loadMenuData();
+    }
 
-        // Lắng nghe sự thay đổi dữ liệu từ Firebase
+    // Phương thức để lấy và cập nhật dữ liệu từ Firebase
+    private void loadMenuData() {
         menuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // Lấy dữ liệu từ Firebase
-                menuList.clear();  // Xóa dữ liệu cũ trước khi thêm dữ liệu mới
+                menuList.clear();
+                // Lặp qua các ngày trong tuần và lấy thực đơn
                 for (DataSnapshot daySnapshot : dataSnapshot.getChildren()) {
-                    String day = daySnapshot.getKey();  // Lấy ngày trong tuần
-                    Menu menu = daySnapshot.getValue(Menu.class);  // Lấy thực đơn cho ngày đó
-                    if (menu != null) {
-                        menu.setDay(day);  // Gán ngày cho thực đơn
-                        menuList.add(menu);  // Thêm vào danh sách
+                    String day = daySnapshot.getKey();  // "monday", "tuesday", ...
+                    String name = daySnapshot.child("name").getValue(String.class);
+
+                    List<String> food = new ArrayList<>();
+                    for (DataSnapshot foodSnapshot : daySnapshot.child("food").getChildren()) {
+                        food.add(foodSnapshot.getValue(String.class));
                     }
+
+                    List<String> notes = new ArrayList<>();
+                    for (DataSnapshot noteSnapshot : daySnapshot.child("notes").getChildren()) {
+                        notes.add(noteSnapshot.getValue(String.class));
+                    }
+
+                    // Tạo đối tượng Menu và thêm vào list
+                    Menu menu = new Menu(day, name, food, notes);
+                    menuList.add(menu);
                 }
-                menuAdapter.notifyDataSetChanged();  // Cập nhật RecyclerView
+                menuAdapter.notifyDataSetChanged(); // Cập nhật giao diện
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Nếu có lỗi khi lấy dữ liệu
-                Toast.makeText(MenuActivity.this, "Lỗi tải dữ liệu", Toast.LENGTH_SHORT).show();
+                // Xử lý lỗi nếu có
+                Toast.makeText(MenuActivity.this, "Lỗi khi tải thực đơn!", Toast.LENGTH_SHORT).show();
             }
         });
     }
