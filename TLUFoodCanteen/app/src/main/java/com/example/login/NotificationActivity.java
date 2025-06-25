@@ -16,9 +16,7 @@ import java.util.ArrayList;
 
 public class NotificationActivity extends AppCompatActivity {
 
-    private ListView notificationListView;
-    private ArrayList<String> notificationsList; // Danh sách các thông báo
-    private DatabaseReference notificationsRef; // Tham chiếu đến Firebase
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
